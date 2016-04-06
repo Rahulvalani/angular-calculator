@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+	<link href="custom.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+</head>
+<body ng-app="calculator">
+    <div class="navbar navbar-default navbar-default">
+    	<div class="container">
+    		<div class="navbar-header">
+    			<button type="button" class="navbar-toggle" data-toggle="collapse" data-targets="#example">
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+
+    			</button>
+    			<a href="#">
+    			<img src="your image source/jpg" alt="HTML5 Icon" >
+    			</a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="example">
+    			<ul class="nav navbar-nav">
+    				<li> <a href="">Home</a></li>
+    				<li> <a href="">Setting</a></li>
+    				
+    			<!--	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Logout <span class="caret"></span></a>
+    				<ul class="dropdown-menu">
+    					<li><a href="#"></a></li>
+    					<li><a href="#"></a></li>
+    				</ul>
+
+    				</li> -->
+                    <li class=" dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle = "dropdown" > <span >Logout<b class="caret"></b></span> </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#">Go Home</a>
+                        
+                    </li>
+                    
+                </ul>
+            </li> 
+
+    			</ul>
+
+    			<form action="" class="navbar-form navbar-right" role="search">
+    			<div class="form-group">
+    				<input type="text" class="form-control" placeholder="Search">
+    			</div>
+    			<button type="submit" class="btn btn-primary">Search	
+    			</button>
+    				
+
+    			</form>
+
+
+    		</div>
+
+
+    	</div>
+
+
+    </div>
+</nav>
+
+
+<div class="container" ng-controller="CalController" >
+    <div align="center" class="container" ng-show="!user.showCal">
+            <button class="btn btn-primary centerButton" ng-click="user.launchCal()">Launch Calculator</a>
+    </div>
+
+	<div class="calculator" ng-show="user.showCal">
+	   <div class="calMain">
+			<form role="form" name="golfForm" ng-submit="user.submitClick()">
+			    <div class="form-group">
+			      <label for="length"> Length:</label>
+			      <input type="number" class="form-control" id="length" name="length" ng-model="user.length" placeholder="Enter Length" required>
+                  <div ng-messages="golfForm.length.$error" ng-if="golfForm.length.$dirty">
+                    <p ng-message="required" class="errors">Length is required</p>
+                  </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="width"> Width:</label>
+			      <input type="number" class="form-control" id="width" name="width" ng-model="user.width" placeholder="Enter Width" required>
+                  <div ng-messages="golfForm.width.$error" ng-if="golfForm.width.$dirty">
+                    <p ng-message="required" class="errors">Width is required</p>
+                  </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="height"> Height:</label>
+			      <input type="number" class="form-control" id="height" name="height" ng-model="user.height" placeholder="Enter Height" required>
+                  <div ng-messages="golfForm.height.$error" ng-if="golfForm.height.$dirty">
+                    <p ng-message="required" class="errors">Height is required</p>
+                  </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="weight"> Weight:</label>
+			      <input type="number" class="form-control" id="weight" name="weight" ng-model="user.weight" placeholder="Enter Weight" required>
+                  <div ng-messages="golfForm.weight.$error" ng-if="golfForm.weight.$dirty">
+                    <p ng-message="required" class="errors">Weight is required</p>
+                  </div>
+			    </div>
+		    	<button type="submit" class="btn btn-primary">Submit</button>
+		    	<p>Note: Please enter the numeric value.Thanks!!</p>
+		  </form>
+		</div>
+	</div>	
+    <div align="center" ng-show="user.showType" class="resultDiv">
+          <p class="errors" ng-show="user.noData">Sorry, Please specify different dimensions!!</p>
+          <div ng-show="!user.noData">
+              <p> You can use: <span>{{dataSelected.name}}</span></p>
+              <p> Type: {{dataSelected.type}}</p>
+              <p> Dimensions: <span>{{dataSelected.length}}"*{{dataSelected.weight}}"*{{dataSelected.height}}"</span> </p> 
+              <p> Maximum weight: {{dataSelected.weight}}lbs</p>
+          </div>
+    </div>
+
+</div> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.0-rc.2/angular-messages.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+#example{
+	float: right;
+}
+
+.container{
+
+}
+.container .centerButton{
+   margin-top: 18%;
+
+}
+
+.calculator{
+	width: 50%;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.calculator .calMain{
+    width: 80%;
+    margin: 5% auto;
+}
+
+li:hover{
+	border-bottom: 1px solid black;
+}
+.errors{
+	color: red;
+}
+
+.resultDiv{
+
+	border: 2px solid green;
+    border-radius: 10px;
+    width: 50%;
+    margin: 5% auto;
+}
+
+.resultDiv span{
+
+	font-size: 20px;
+	font-weight: 300px;
+	color: green;
+}
